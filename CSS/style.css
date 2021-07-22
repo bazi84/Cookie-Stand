@@ -1,0 +1,49 @@
+body {
+  background-color: rgb(71, 112, 112);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  
+  
+  
+}
+header ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.container-fluid {
+  padding:3%
+}
+
+.navbar {
+  padding-bottom: 0 0 4.5re
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+ display: flex;
+ 
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  
+}
