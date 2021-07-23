@@ -2,7 +2,7 @@
 
 
 
-
+const formElem = document.getElementById('addStore');
 
 
 const storePlace = [];
@@ -15,7 +15,6 @@ console.log(tableElem)
 const dailyBuisnessHours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm','3pm','4pm','5pm','6pm','7pm',];
 
 function Store(minCust, maxCust, avgCookiePerSale, name) {
-  console.log('test')
   this.name = name;
   this.minCust = minCust;
   this. maxCust = maxCust;
@@ -27,7 +26,6 @@ function Store(minCust, maxCust, avgCookiePerSale, name) {
 }
 
 Store.prototype.randomCustInArea = function(){
-  console.log('test')
 return Math.floor(Math.random() * (this.maxCust - this.minCust +1) + this.minCust);
 }
 
@@ -39,8 +37,9 @@ Store.prototype.calculatesSalesHourly = function(){
   }
 }
 
-Store.prototype.renderStore = function(bodyElem) {
+Store.prototype.renderStore = function() {
   // console.log(this.hourlySales)
+  const bodyElem = document.createElement('article');
   const rowElement = document.createElement('tr');
   bodyElem.appendChild(rowElement);
   const locationThElem = document.createElement('td')
@@ -99,6 +98,23 @@ function renderAllStores() {
   
 }
 
+function handleSubmit(e) {
+  e.preventDefault();
+  console.log(e.target);
+  let name = e.target.storeName.value;
+  let minCust = e.target.minCust.value
+  let maxCust = e.target.maxCust.value
+  let avgCookiePerSale = e.target.avgCookiePerSale.value
+  let dailyBuisnessHours = e.target.dailyBuisnessHours.value.split(',')
+  console.log(name, minCust, maxCust)
+
+  let newStore = new Store(minCust, maxCust, avgCookiePerSale, name, dailyBuisnessHours) 
+  console.log(newStore)
+  newStore.renderStore();
+  e.target.reset();
+}
+
+formElem.addEventListener('submit', handleSubmit)
 
 function renderFooter() {
   const tfootElem = makeElement('tfoot', bodyElem, null);

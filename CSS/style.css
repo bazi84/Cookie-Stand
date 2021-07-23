@@ -98,7 +98,11 @@ main {
 }
 
 #footer {
-  padding: 2% 1%;
+  padding: 0% 1%;
   text-align: left;
 
+}
+
+h2{
+  margin: 1% 1%
 }
