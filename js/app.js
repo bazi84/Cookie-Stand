@@ -39,7 +39,7 @@ Store.prototype.calculatesSalesHourly = function(){
 
 Store.prototype.renderStore = function() {
   // console.log(this.hourlySales)
-  const bodyElem = document.createElement('article');
+  // const bodyElem = document.createElement('article');
   const rowElement = document.createElement('tr');
   bodyElem.appendChild(rowElement);
   const locationThElem = document.createElement('td')
