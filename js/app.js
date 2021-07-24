@@ -103,13 +103,18 @@ function handleSubmit(e) {
   console.log(e.target);
   let name = e.target.storeName.value;
   let minCust = e.target.minCust.value
+  parseInt(minCust);
   let maxCust = e.target.maxCust.value
+  parseInt(maxCust);
   let avgCookiePerSale = e.target.avgCookiePerSale.value
+  parseInt(avgCookiePerSale);
   let dailyBuisnessHours = e.target.dailyBuisnessHours.value.split(',')
   console.log(name, minCust, maxCust)
 
   let newStore = new Store(minCust, maxCust, avgCookiePerSale, name, dailyBuisnessHours) 
   console.log(newStore)
+  newStore.randomCustInArea();
+  newStore.calculatesSalesHourly();
   newStore.renderStore();
   e.target.reset();
 }
